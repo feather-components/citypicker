@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>citypicker example</title>
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/class/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="../bower_components/overlay/index.css" />
+    <script src="../bower_components/overlay/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="../bower_components/picker/index.css" />
+    <script src="../bower_components/picker/index.js"></script>
+    <script src="../city.js"></script>
+    <link rel="stylesheet" type="text/css" href="../index.css" />
+    <script src="../index.js"></script>
+</head>
+
+<body>
+<div id="test"></div>
+
+<input type="text" id="citypicker" readonly="readonly" style="position: absolute; top: 500px;"/>
+<script>
+$('#citypicker').citypicker({
+    
+}).on('citypicker:select', function(event, v, a){
+    console.log(v, a);
+})
+</script>
+</body>
+</html>
