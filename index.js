@@ -17,7 +17,7 @@ var CityPicker = Class.$factory('citypicker', Picker, {
     initialize: function(options){
         options = $.extend({
             source: Citys,
-            selectedClassName: ''
+            selectedClassName: 'ui3-citypicker-selected'
         }, options || {});
 
         var self = this;
@@ -40,9 +40,9 @@ var CityPicker = Class.$factory('citypicker', Picker, {
         });
 
         var $items = self.$picker.find('.ui3-citypicker-list a').click(function(){
-            $items.removeClass('ui3-citypicker-selected');
+            $items.removeClass(self.options.selectedClassName);
 
-            var $this = $(this).addClass('ui3-citypicker-selected');
+            var $this = $(this).addClass(self.options.selectedClassName);
             var name = $this.attr('data-name');
 
             self.trigger('select', [name, $this.attr('data-id')]);
