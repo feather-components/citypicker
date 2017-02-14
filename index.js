@@ -20,9 +20,7 @@ var CityPicker = Class.$factory('citypicker', Picker, {
             selectedClassName: 'ui3-citypicker-selected'
         }, options || {});
 
-        var self = this;
-
-        self._super(options);
+        this._super(options);
     },
 
     initEvent: function(){
