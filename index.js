@@ -38,6 +38,8 @@ var CityPicker = Class.$factory('citypicker', Picker, {
         });
 
         var $items = self.$picker.find('.ui3-citypicker-list a').click(function(){
+            if($(this).hasClass('ui3-citypicker-disabled')) return false;
+
             $items.removeClass(self.options.selectedClassName);
 
             var $this = $(this).addClass(self.options.selectedClassName);
@@ -45,7 +47,6 @@ var CityPicker = Class.$factory('citypicker', Picker, {
 
             self.trigger('select', [name, $this.attr('data-id')]);
             self.$dom && self.$dom.val(name);
-            self.close();
         });
     },
 
@@ -97,6 +98,16 @@ var CityPicker = Class.$factory('citypicker', Picker, {
         });
 
         return list;
+    },
+
+    disable: function(name){
+        var attr = typeof name == 'number' ? 'id' : 'name';
+        this.$picker.find('[data-' + attr + '="' + name + '"]').addClass('ui3-citypicker-disabled');
+    },
+
+    enable: function(name){
+        var attr = typeof name == 'number' ? 'id' : 'name';
+        this.$picker.find('[data-' + attr + '="' + name + '"]').removeClass('ui3-citypicker-disabled');
     }
 });
 

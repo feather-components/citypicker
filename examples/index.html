@@ -21,10 +21,11 @@
 <input type="text" id="citypicker" readonly="readonly" style="position: absolute; top: 500px;"/>
 <script>
 $('#citypicker').citypicker({
-    
+    closeAfterSelect: false
 }).on('citypicker:select', function(event, v, a){
     console.log(v, a);
-})
+    $(this).citypicker('disable', v);
+}).citypicker('disable', '盐城');
 </script>
 </body>
 </html>

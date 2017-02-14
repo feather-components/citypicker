@@ -68,3 +68,12 @@
 .ui3-citypicker .ui3-citypicker-lw{
     width: 106px;
 }
+
+.ui3-citypicker-disabled{
+    color: #ccc !important;
+}
+
+.ui3-citypicker-disabled:hover{
+    color: #ccc !important;
+    text-decoration: none;
+};
