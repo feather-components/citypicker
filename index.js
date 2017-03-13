@@ -48,6 +48,10 @@ var CityPicker = Class.$factory('citypicker', Picker, {
             self.trigger('select', [name, $this.attr('data-id')]);
             self.$dom && self.$dom.val(name);
         });
+
+        self.$picker.on('mousewheel', function(e){
+            e.stopPropagation();
+        });
     },
 
     create: function(){
