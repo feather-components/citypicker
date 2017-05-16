@@ -21,7 +21,8 @@
 <input type="text" id="citypicker" readonly="readonly" style="position: absolute; top: 500px;"/>
 <script>
 $('#citypicker').citypicker({
-    closeAfterSelect: false
+    closeAfterSelect: false,
+    enables:[1,239,365]
 }).on('citypicker:select', function(event, v, a){
     console.log(v, a);
     $(this).citypicker('disable', v);
