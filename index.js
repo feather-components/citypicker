@@ -20,7 +20,7 @@ var CityPicker = Class.$factory('citypicker', Picker, {
             selectedClassName: 'ui3-citypicker-selected'
         }, options || {});
         
-        options.enables&&this.sourceFilter(options.source,options.enables);
+        options.enables && this.sourceFilter(options.source, options.enables);
         
         this._super(options);
     },
@@ -116,13 +116,13 @@ var CityPicker = Class.$factory('citypicker', Picker, {
         this.$picker.find('[data-' + attr + '="' + name + '"]').removeClass('ui3-citypicker-disabled');
     },
     
-    sourceFilter:function (source,enables) {
-        if(typeof enables=='object'){
-            var encitys=enables.map(function(i){
-                return i+'';
+    sourceFilter: function (source, enables) {
+        if(typeof enables == 'object'){
+            var encitys = enables.map(function(i){
+                return i + '';
             })
             for(var key in source){ 
-                if(encitys.indexOf(key)<0){
+                if(encitys.indexOf(key) < 0){
                     delete source[key];
                 }
             } 
